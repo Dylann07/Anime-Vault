@@ -64,4 +64,19 @@ public class Anime extends Media{
         System.out.println("Studio : " + this.studio);
         System.out.println("Genre : " + this.genreA);
     }
+
+    public int getNbEpisodes()
+    {
+        return nbEpisodes;
+    }
+
+    public String getStudio()
+    {
+        return studio;
+    }
+
+    public String getGenreA()
+    {
+        return genreA;
+    }
 }

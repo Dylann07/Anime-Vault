@@ -40,4 +40,19 @@ public class Manga extends Media{
         System.out.println("Editeur : " + this.editeur);
         System.out.println("Genre : " + this.genreM);
     }
+
+    public int getNbTomes()
+    {
+        return nbTomes;
+    }
+
+    public String getEditeur()
+    {
+        return editeur;
+    }
+
+    public String getGenreM()
+    {
+        return genreM;
+    }
 }

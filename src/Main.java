@@ -4,6 +4,8 @@ public class Main {
     public static void main (String[] args) {
         Scanner scanner = new Scanner(System.in);
         Collection collection = new Collection();
+        Sauvegarde sauvegarde = new Sauvegarde();
+        sauvegarde.creationSave();
         System.out.println("Bienvenue cher utilisateur sur ANIMEVAULT");
 
         int choix;
@@ -38,6 +40,7 @@ public class Main {
                     System.out.println("=========================================");
                     M.ajoutManga();
                     collection.ajouterMedia(M);
+                    sauvegarde.ecritureSave(M);
                     break;
                 case 2:
 
@@ -45,6 +48,7 @@ public class Main {
                     System.out.println("AJOUT D'UN ANIME");
                     A.ajoutAnime();
                     collection.ajouterMedia(A);
+                    sauvegarde.ecritureSave(A);
                     break;
                 case 3:
                     System.out.println("AFFICHAGE DE VOTRE COLLECTION");
