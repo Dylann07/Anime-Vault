@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Collection collection = new Collection();
         Sauvegarde sauvegarde = new Sauvegarde();
         sauvegarde.creationSave();
         System.out.println("Bienvenue cher utilisateur sur ANIMEVAULT");
@@ -19,7 +18,7 @@ public class Main {
                 System.out.println("4- AFFICHER QUE LES MANGAS");
                 System.out.println("5- AFFICHER QUE LES ANNIMES");
                 System.out.println("6- RECHERCHE PAR TITRE");
-                System.out.println("7- TRIER PAR NOTES");
+                System.out.println("7- TRIER");
                 System.out.println("8- SUPPRIMER UN MEDIA");
                 System.out.println("0- QUITTER");
                 System.out.print("Réponse : ");
@@ -39,7 +38,6 @@ public class Main {
                     System.out.println("AJOUT D'UN MANGA");
                     System.out.println("=========================================");
                     M.ajoutManga();
-                    collection.ajouterMedia(M);
                     sauvegarde.ecritureSave(M);
                     break;
                 case 2:
@@ -47,40 +45,70 @@ public class Main {
                     Anime A = new Anime();
                     System.out.println("AJOUT D'UN ANIME");
                     A.ajoutAnime();
-                    collection.ajouterMedia(A);
                     sauvegarde.ecritureSave(A);
                     break;
                 case 3:
                     System.out.println("AFFICHAGE DE VOTRE COLLECTION");
                     System.out.println("=========================================");
-                    collection.afficher(choix);
+                    sauvegarde.affichageSave(choix);
                     break;
                 case 4:
                     System.out.println("AFFICHAGE DE VOTRE COLLECTION DE MANGAS");
                     System.out.println("=========================================");
-                    collection.afficher(choix);
+                    sauvegarde.affichageSave(choix);
                     break;
                 case 5:
                     System.out.println("AFFICHAGE DE VOTRE COLLECTION D'ANIME");
                     System.out.println("=========================================");
-                    collection.afficher(choix);
+                    sauvegarde.affichageSave(choix);
                     break;
                 case 6:
                     System.out.println("RECHERCHE PAR TITRE");
                     System.out.print("Titres rehcerché : ");
                     String recherche = scanner.nextLine();
-                    collection.recherche(recherche);
+                    sauvegarde.rechercheSave(recherche);
                     System.out.println("=========================================");
                     break;
                 case 7:
-                    collection.trierParNote();
-                    collection.afficher(3);
+                    int choixTrie , choixOrdre;
+                    do
+                    {
+                        System.out.println("1- Trier par titre");
+                        System.out.println("2- Trier par Auteur");
+                        System.out.println("3- Trier par Année");
+                        System.out.println("4- Trier par note");
+                        System.out.println("5- Trier par Status");
+                        System.out.print("Réponse : ");
+                        choixTrie = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (choixTrie != 1 && choixTrie != 2 && choixTrie != 3 && choixTrie != 4 && choixTrie != 5)
+                        {
+                            System.out.println("\nErreur !! veuillez entrez un chiffres compris entre 1 et 5");
+                        }
+                    }while (choixTrie != 1 && choixTrie != 2 && choixTrie != 3 && choixTrie != 4 && choixTrie != 5);
+
+                    do
+                    {
+                        System.out.println("1- Ordre Croissant / Alphabetique / A-Z");
+                        System.out.println("2- Ordre Decroissant /NON  Alphabetique / Z-A");
+                        System.out.print("Réponse : ");
+                        choixOrdre = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (choixOrdre != 1 && choixOrdre != 2)
+                        {
+                            System.out.println("\nErreur !! veuillez entrez un chiffres compris entre 0 et 9");
+                        }
+                    }while (choixOrdre != 1 && choixOrdre != 2);
+                    sauvegarde.trieSave(choixTrie , choixOrdre);
+                    sauvegarde.affichageSave(3);
                     break;
                 case 8:
                     System.out.println("RECHERCHE DU TITRE A SUPPRIMER");
                     System.out.print("Titres rehcerché : ");
                     String SUP = scanner.nextLine();
-                    collection.supprimer(SUP);
+                    sauvegarde.suppressionSave(SUP);
                     break;
                 case 0:
                     System.out.println("AU REVOIR CHERE UTILISATEUR !!!");

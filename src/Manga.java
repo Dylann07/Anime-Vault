@@ -4,6 +4,17 @@ public class Manga extends Media{
     private String editeur;
     private String genreM;
 
+    public void constuct (String titre , String auteur , int annee , double note ,String status , String genreM , int nbTomes , String editeur)
+    {
+        this.titre = titre;
+        this.auteur = auteur;
+        this.annee = annee;
+        this.note = note;
+        this.status = status;
+        this.genreM = genreM;
+        this.nbTomes = nbTomes;
+        this.editeur = editeur;
+    }
     public void ajoutManga () {
         ajoutMedia();
         Scanner scanner = new Scanner(System.in);
@@ -55,4 +66,21 @@ public class Manga extends Media{
     {
         return genreM;
     }
+
+
+    public void setNbTomes(int nbTomes)
+    {
+        this.nbTomes = nbTomes;
+    }
+
+    public void setEditeur(String editeur)
+    {
+        this.editeur = editeur;
+    }
+
+    public void setGenreM(String genreM)
+    {
+        this.genreM = genreM;
+    }
+
 }

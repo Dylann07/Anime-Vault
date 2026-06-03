@@ -79,4 +79,19 @@ public class Anime extends Media{
     {
         return genreA;
     }
+
+    public void setNbEpisodes(int nbEpisodes)
+    {
+        this.nbEpisodes = nbEpisodes;
+    }
+
+    public void setStudio(String studio)
+    {
+        this.studio = studio;
+    }
+
+    public void setGenreA(String genreA)
+    {
+        this.genreA = genreA;
+    }
 }

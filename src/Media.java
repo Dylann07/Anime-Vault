@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Media {
     protected String titre;
     protected int annee;
-    protected Double note;
+    protected double note;
     protected String status;
     protected String auteur;
 
@@ -45,5 +45,28 @@ public class Media {
 
     }
 
+    public void setTitre(String titre)
+    {
+        this.titre = titre;
+    }
+
+    public void setAnnee(int annee)
+    {
+        this.annee = annee; }
+
+    public void setNote(double note)
+    {
+        this.note = note;
+    }
+
+    public void setStatus(String status)
+    {
+        this.status = status;
+    }
+
+    public void setAuteur(String auteur)
+    {
+        this.auteur = auteur;
+    }
 }
 
