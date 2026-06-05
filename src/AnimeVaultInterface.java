@@ -12,17 +12,17 @@ public class AnimeVaultInterface extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage stage) {
         VBox layout = new VBox();
         layout.getChildren().addAll(
                 new Label("Anime-Vault"),
                 new Button("Validé")
         );
 
-        Scene fenetre = new Scene(layout , 1000 , 1000);
+        Scene fenetre = new Scene(layout , 500 , 500);
 
-        primaryStage.setTitle("Anime-Vault");
-        primaryStage.setScene(fenetre);
-        primaryStage.show();
+        stage.setTitle("Anime-Vault");
+        stage.setScene(fenetre);
+        stage.show();
     }
 }
